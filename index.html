@@ -327,6 +327,7 @@
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
       overflow: hidden; padding: 0; position: relative;
+      z-index: 10; /* stay above the panel-window sections that overlap via negative margin */
     }
     /* Fade edges so items don't hard-cut */
     .trust::before,

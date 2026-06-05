@@ -328,6 +328,24 @@
       border-bottom: 1px solid var(--border);
       overflow: hidden; padding: 0; position: relative;
     }
+    /* Fade edges so items don't hard-cut */
+    .trust::before,
+    .trust::after {
+      content: '';
+      position: absolute;
+      top: 0; bottom: 0;
+      width: 100px;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .trust::before {
+      left: 0;
+      background: linear-gradient(to right, var(--bg-1) 0%, transparent 100%);
+    }
+    .trust::after {
+      right: 0;
+      background: linear-gradient(to left, var(--bg-1) 0%, transparent 100%);
+    }
     .trust-track {
       display: flex; width: max-content;
       animation: marquee 30s linear infinite;
